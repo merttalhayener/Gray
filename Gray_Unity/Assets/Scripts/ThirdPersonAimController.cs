@@ -54,6 +54,7 @@ public class ThirdPersonAimController : MonoBehaviour
         
         if (starterAssestInputs.aim)
         {
+            Debug.Log("Sað Týk Basýldý");
             aimVirtualCamera.gameObject.SetActive(true);
             thirdPersonController.SetSensitivity(aimSensitivity);
             thirdPersonController.SetRotateOnMove(false);
@@ -64,6 +65,37 @@ public class ThirdPersonAimController : MonoBehaviour
             Vector3 aimDirection = (worldAimTarget - transform.position).normalized;
 
             transform.forward = Vector3.Lerp(transform.forward, aimDirection, Time.deltaTime * 20f);
+            if (starterAssestInputs.shoot)
+            {
+                if (!audioSource.isPlaying)
+                {
+                    audioSource.PlayOneShot(gunFire);
+                }
+                if (hitTransform != null)
+                {
+
+                    //hit something
+                    if (hitTransform.GetComponent<EnemyTakedDown>() != null)
+                    {
+                        Debug.Log("Hedef vuruldu");
+                        hitTransform.gameObject.GetComponent<EnemyTakedDown>().health -= 100f;
+
+
+
+                        //Hit target
+                    }
+                    else
+                    {
+                        Debug.Log("Baþka birþey vuruldu");
+                        //Hit something else 
+                    }
+
+                }
+                // Vector3 aimDirection = (mouseWorldPosition - spawnBulletPosition.position).normalized;
+                // Instantiate(pfBulletProjectile, spawnBulletPosition.position, Quaternion.LookRotation(aimDirection, Vector3.up));
+                starterAssestInputs.shoot = false;
+            }
+
         }
         else
         {
@@ -73,38 +105,8 @@ public class ThirdPersonAimController : MonoBehaviour
             animator.SetLayerWeight(1, Mathf.Lerp(animator.GetLayerWeight(1), 0f, Time.deltaTime * 10f));
         }
 
-        if (starterAssestInputs.shoot)
-        {
-            if (!audioSource.isPlaying)
-            {
-            audioSource.PlayOneShot(gunFire);
-            }
-            if (hitTransform != null)
-            {
-              
-                //hit something
-                if (hitTransform.GetComponent<EnemyTakedDown>() != null)
-                {
-                    Debug.Log("Hedef vuruldu");
-                    hitTransform.gameObject.GetComponent<EnemyTakedDown>().health -= 100f;
-                  
-                  
-                    
-                    //Hit target
-                }
-                else
-                {
-                    Debug.Log("Baþka birþey vuruldu");
-                    //Hit something else 
-                }
-
-            }
-               // Vector3 aimDirection = (mouseWorldPosition - spawnBulletPosition.position).normalized;
-               // Instantiate(pfBulletProjectile, spawnBulletPosition.position, Quaternion.LookRotation(aimDirection, Vector3.up));
-                starterAssestInputs.shoot = false;
-        }
-    
     }
+        
 
 
 }
