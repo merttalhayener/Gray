@@ -478,7 +478,7 @@ PrefabInstance:
     - target: {fileID: 6204111823892096298, guid: fd78af9b489ac8d4aa2e91c1834639f8,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -80.315216
+      value: -81.47051
       objectReference: {fileID: 0}
     - target: {fileID: 6204111823892096298, guid: fd78af9b489ac8d4aa2e91c1834639f8,
         type: 3}
@@ -607,6 +607,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4337130020842059148, guid: 5cb062b92607e9542b4639b6080505d1,
         type: 3}
+      propertyPath: gunFire
+      value: 
+      objectReference: {fileID: 8300000, guid: b38030517f157074a9312c5ee78b2833, type: 3}
+    - target: {fileID: 4337130020842059148, guid: 5cb062b92607e9542b4639b6080505d1,
+        type: 3}
       propertyPath: aimVirtualCamera
       value: 
       objectReference: {fileID: 8112955032277632744}
@@ -670,7 +675,7 @@ PrefabInstance:
     - target: {fileID: 8944336655422409503, guid: f6d148d888ffbf54b9afe9936dfaec1f,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -80.315216
+      value: -81.47051
       objectReference: {fileID: 0}
     - target: {fileID: 8944336655422409503, guid: f6d148d888ffbf54b9afe9936dfaec1f,
         type: 3}
