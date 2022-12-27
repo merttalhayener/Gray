@@ -20,7 +20,10 @@ namespace StarterAssets
         
         [Header("Player")]
         [Tooltip("Move speed of the character in m/s")]
-        public float MoveSpeed = 2.0f;
+        public float MoveSpeed = 2.0f ;
+        public float sajfakjfsf;
+        
+        
 
         [Tooltip("Sprint speed of the character in m/s")]
         public float SprintSpeed = 5.335f;
@@ -170,6 +173,7 @@ namespace StarterAssets
         private void Start()
         {
             rb = GetComponent<Rigidbody>();
+           
             
            
             _cinemachineTargetYaw = CinemachineCameraTarget.transform.rotation.eulerAngles.y;
