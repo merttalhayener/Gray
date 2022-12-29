@@ -4396,7 +4396,7 @@ Transform:
   - {fileID: 1284883957}
   - {fileID: 465096132}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &317016007
 GameObject:
@@ -8976,12 +8976,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 824e5c5b1f6074b4183c136dc62465b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerTransform: {fileID: 0}
+  maxTime: 1
+  maxDistance: 1
+  animator: {fileID: 0}
   waypoints:
   - {fileID: 628260192}
   - {fileID: 1274966679}
   - {fileID: 0}
   target: {x: 0, y: 0, z: 0}
-  animator: {fileID: 0}
 --- !u!114 &753009281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9573,7 +9576,7 @@ Transform:
   - {fileID: 651180531}
   - {fileID: 1318431043}
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &794286783
 PrefabInstance:
@@ -16176,6 +16179,84 @@ Transform:
   m_Father: {fileID: 1385240595}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1337230164
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1337230167}
+  - component: {fileID: 1337230166}
+  - component: {fileID: 1337230165}
+  m_Layer: 0
+  m_Name: Terrain
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!154 &1337230165
+TerrainCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1337230164}
+  m_Material: {fileID: 0}
+  m_Enabled: 1
+  m_TerrainData: {fileID: 15600000, guid: 9dc95a6b587bb524fa175ec1222f530a, type: 2}
+  m_EnableTreeColliders: 1
+--- !u!218 &1337230166
+Terrain:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1337230164}
+  m_Enabled: 1
+  serializedVersion: 6
+  m_TerrainData: {fileID: 15600000, guid: 9dc95a6b587bb524fa175ec1222f530a, type: 2}
+  m_TreeDistance: 5000
+  m_TreeBillboardDistance: 50
+  m_TreeCrossFadeLength: 5
+  m_TreeMaximumFullLODCount: 50
+  m_DetailObjectDistance: 80
+  m_DetailObjectDensity: 1
+  m_HeightmapPixelError: 5
+  m_SplatMapDistance: 1000
+  m_HeightmapMaximumLOD: 0
+  m_ShadowCastingMode: 2
+  m_DrawHeightmap: 1
+  m_DrawInstanced: 0
+  m_DrawTreesAndFoliage: 1
+  m_StaticShadowCaster: 0
+  m_ReflectionProbeUsage: 1
+  m_MaterialTemplate: {fileID: 2100000, guid: 594ea882c5a793440b60ff72d896021e, type: 2}
+  m_BakeLightProbesForTrees: 1
+  m_PreserveTreePrototypeLayers: 0
+  m_DeringLightProbesForTrees: 1
+  m_ScaleInLightmap: 0.0256
+  m_LightmapParameters: {fileID: 15203, guid: 0000000000000000f000000000000000, type: 0}
+  m_GroupingID: 0
+  m_RenderingLayerMask: 1
+  m_AllowAutoConnect: 1
+--- !u!4 &1337230167
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1337230164}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -48.9, y: 0, z: -26.1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 20
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1340785343
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16334,7 +16415,7 @@ Transform:
   - {fileID: 753009279}
   - {fileID: 1792043070}
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1353296544
 GameObject:
@@ -18784,99 +18865,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1600903577}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1603861448
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1603861451}
-  - component: {fileID: 1603861450}
-  - component: {fileID: 1603861449}
-  - component: {fileID: 1603861452}
-  m_Layer: 0
-  m_Name: Terrain
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
-  m_IsActive: 1
---- !u!154 &1603861449
-TerrainCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1603861448}
-  m_Material: {fileID: 0}
-  m_Enabled: 1
-  m_TerrainData: {fileID: 15600000, guid: d818e127d90b91046b6ff9eb4aced875, type: 2}
-  m_EnableTreeColliders: 1
---- !u!218 &1603861450
-Terrain:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1603861448}
-  m_Enabled: 1
-  serializedVersion: 6
-  m_TerrainData: {fileID: 15600000, guid: d818e127d90b91046b6ff9eb4aced875, type: 2}
-  m_TreeDistance: 5000
-  m_TreeBillboardDistance: 50
-  m_TreeCrossFadeLength: 5
-  m_TreeMaximumFullLODCount: 50
-  m_DetailObjectDistance: 80
-  m_DetailObjectDensity: 1
-  m_HeightmapPixelError: 5
-  m_SplatMapDistance: 1000
-  m_HeightmapMaximumLOD: 0
-  m_ShadowCastingMode: 2
-  m_DrawHeightmap: 1
-  m_DrawInstanced: 0
-  m_DrawTreesAndFoliage: 1
-  m_StaticShadowCaster: 0
-  m_ReflectionProbeUsage: 1
-  m_MaterialTemplate: {fileID: 2100000, guid: 594ea882c5a793440b60ff72d896021e, type: 2}
-  m_BakeLightProbesForTrees: 1
-  m_PreserveTreePrototypeLayers: 0
-  m_DeringLightProbesForTrees: 1
-  m_ScaleInLightmap: 0.0256
-  m_LightmapParameters: {fileID: 15203, guid: 0000000000000000f000000000000000, type: 0}
-  m_GroupingID: 0
-  m_RenderingLayerMask: 1
-  m_AllowAutoConnect: 1
---- !u!4 &1603861451
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1603861448}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -498, y: 0, z: -465}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 15
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1603861452
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1603861448}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!1 &1618636124
 GameObject:
   m_ObjectHideFlags: 0
@@ -21987,7 +21975,7 @@ Transform:
   - {fileID: 7794154434528108545}
   - {fileID: 7794154434804803840}
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1846797848
 GameObject:
@@ -26077,12 +26065,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 824e5c5b1f6074b4183c136dc62465b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerTransform: {fileID: 0}
+  maxTime: 1
+  maxDistance: 1
+  animator: {fileID: 0}
   waypoints:
   - {fileID: 118899779950200729}
   - {fileID: 0}
   - {fileID: 0}
   target: {x: 0, y: 0, z: 0}
-  animator: {fileID: 0}
 --- !u!136 &118899779655289962
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -30375,12 +30366,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 824e5c5b1f6074b4183c136dc62465b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerTransform: {fileID: 0}
+  maxTime: 1
+  maxDistance: 1
+  animator: {fileID: 0}
   waypoints:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   target: {x: 0, y: 0, z: 0}
-  animator: {fileID: 0}
 --- !u!136 &1194944387352302522
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -38426,7 +38420,7 @@ Transform:
   - {fileID: 1398878985}
   - {fileID: 180930223}
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3243645186475922086
 MeshFilter:
@@ -39649,11 +39643,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 824e5c5b1f6074b4183c136dc62465b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerTransform: {fileID: 0}
+  maxTime: 1
+  maxDistance: 1
+  animator: {fileID: 0}
   waypoints:
   - {fileID: 3562339051902417810}
   - {fileID: 195487064}
   target: {x: 0, y: 0, z: 0}
-  animator: {fileID: 0}
 --- !u!114 &3562339051125157988
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42924,12 +42921,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 824e5c5b1f6074b4183c136dc62465b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerTransform: {fileID: 0}
+  maxTime: 1
+  maxDistance: 1
+  animator: {fileID: 0}
   waypoints:
   - {fileID: 4304305142534111054}
   - {fileID: 0}
   - {fileID: 0}
   target: {x: 0, y: 0, z: 0}
-  animator: {fileID: 0}
 --- !u!1 &4304305142534111053
 GameObject:
   m_ObjectHideFlags: 0
@@ -45202,12 +45202,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 824e5c5b1f6074b4183c136dc62465b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerTransform: {fileID: 0}
+  maxTime: 1
+  maxDistance: 1
+  animator: {fileID: 0}
   waypoints:
   - {fileID: 4735962714974936331}
   - {fileID: 0}
   - {fileID: 0}
   target: {x: 0, y: 0, z: 0}
-  animator: {fileID: 0}
 --- !u!65 &4735962715223709436
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -45592,12 +45595,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 824e5c5b1f6074b4183c136dc62465b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerTransform: {fileID: 0}
+  maxTime: 1
+  maxDistance: 1
+  animator: {fileID: 0}
   waypoints:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   target: {x: 0, y: 0, z: 0}
-  animator: {fileID: 0}
 --- !u!114 &4819202291125923864
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50335,12 +50341,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 824e5c5b1f6074b4183c136dc62465b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerTransform: {fileID: 0}
+  maxTime: 1
+  maxDistance: 1
+  animator: {fileID: 0}
   waypoints:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   target: {x: 0, y: 0, z: 0}
-  animator: {fileID: 0}
 --- !u!136 &6103773573090369618
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -53172,9 +53181,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 824e5c5b1f6074b4183c136dc62465b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerTransform: {fileID: 0}
+  maxTime: 1
+  maxDistance: 1
+  animator: {fileID: 0}
   waypoints: []
   target: {x: 0, y: 0, z: 0}
-  animator: {fileID: 0}
 --- !u!114 &6716764151303426404
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54561,12 +54573,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 824e5c5b1f6074b4183c136dc62465b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerTransform: {fileID: 0}
+  maxTime: 1
+  maxDistance: 1
+  animator: {fileID: 0}
   waypoints:
   - {fileID: 7038397364975633427}
   - {fileID: 7038397365394408601}
   - {fileID: 0}
   target: {x: 0, y: 0, z: 0}
-  animator: {fileID: 0}
 --- !u!65 &7038397364693831652
 BoxCollider:
   m_ObjectHideFlags: 0
