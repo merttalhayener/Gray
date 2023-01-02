@@ -37,9 +37,8 @@ public class EnemyAI : MonoBehaviour
             IterateWaypointIndex();
             UpdateDestination();
         }
-       
-    
     }
+
     void UpdateDestination()
     {
         target = waypoints[waypointIndex].position;
@@ -54,12 +53,16 @@ public class EnemyAI : MonoBehaviour
             waypointIndex = 0;
         }
     }
+    void ChasePlayer()
+    {
+        agent.SetDestination(playerTransform.position);
+    }
 
     private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
-            agent.SetDestination(playerTransform.position);
+            ChasePlayer();
         }
     }
 
@@ -68,7 +71,8 @@ public class EnemyAI : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             target = waypoints[waypointIndex].position;
-            agent.SetDestination(target);
+            ChasePlayer();
         }
     }
+
 }
