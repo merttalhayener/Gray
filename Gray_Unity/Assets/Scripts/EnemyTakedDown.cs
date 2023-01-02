@@ -30,7 +30,7 @@ public class EnemyTakedDown : MonoBehaviour
             this.gameObject.GetComponent<CapsuleCollider>().enabled = false;
         }
         isHeAlive();
-        Debug.Log(health);
+        //Debug.Log(health);
     }
 
     public void GetStealthKilled()
@@ -57,12 +57,12 @@ public class EnemyTakedDown : MonoBehaviour
         if (isAlive == false)
         {
             animator.SetBool("isHeAlive", false);
-            Debug.Log("Öldü");
+            //Debug.Log("Öldü");
         }
         else
         {
             animator.SetBool("isHeAlive", true);
-            Debug.Log("Yaþýyor");
+            //Debug.Log("Yaþýyor");
         }
        
     }

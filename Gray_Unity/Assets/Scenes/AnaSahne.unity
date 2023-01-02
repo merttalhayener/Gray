@@ -1017,6 +1017,16 @@ PrefabInstance:
       objectReference: {fileID: 2017355678}
     - target: {fileID: 5236767004302277207, guid: 5f1eaa6f343505c49b8b0062873ca589,
         type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 5866666021398017349}
+    - target: {fileID: 5236767004302277207, guid: 5f1eaa6f343505c49b8b0062873ca589,
+        type: 3}
+      propertyPath: eyeRange
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5236767004302277207, guid: 5f1eaa6f343505c49b8b0062873ca589,
+        type: 3}
       propertyPath: playerTransform
       value: 
       objectReference: {fileID: 4597785837522995893}
@@ -1077,6 +1087,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f1eaa6f343505c49b8b0062873ca589, type: 3}
+--- !u!95 &5866666021398017349 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1857222962270772229, guid: 5f1eaa6f343505c49b8b0062873ca589,
+    type: 3}
+  m_PrefabInstance: {fileID: 5236767004917066048}
+  m_PrefabAsset: {fileID: 0}
 --- !u!65 &5866666021398017350
 BoxCollider:
   m_ObjectHideFlags: 0

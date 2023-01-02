@@ -11,6 +11,7 @@ public class EnemyAI : MonoBehaviour
     public float maxTime = 1f;
     public float maxDistance = 1f;
     float timer = 0f;
+    public float eyeRange = 5f;
 
     int waypointIndex;
     public Animator animator;
@@ -29,7 +30,18 @@ public class EnemyAI : MonoBehaviour
 
     private void Update()
     {
-       
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out RaycastHit hit›nfo, 15f))
+        {
+                Debug.Log("Hit Player");
+                Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit›nfo.distance, Color.red);
+        }
+
+        else
+        {
+            Debug.Log("Hit Nothing");
+            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit›nfo.distance, Color.green);
+        }
+
         animator.SetFloat("Speed", agent.velocity.magnitude);
         if (Vector3.Distance(transform.position, target) < 1)
         {
@@ -53,6 +65,7 @@ public class EnemyAI : MonoBehaviour
             waypointIndex = 0;
         }
     }
+    
     void ChasePlayer()
     {
         agent.SetDestination(playerTransform.position);
