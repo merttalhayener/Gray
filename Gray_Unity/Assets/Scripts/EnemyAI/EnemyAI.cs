@@ -79,7 +79,7 @@ public class EnemyAI : MonoBehaviour
 
         if (other.gameObject.tag == "Player")
         {
-            if (Physics.Raycast(this.transform.position, transform.TransformDirection(Vector3.forward), out hit, playerLayer))
+            if (Physics.Raycast(this.transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, playerLayer))
             {
                 Debug.DrawRay(this.transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.blue);
                 Debug.Log(hit.collider.name);
