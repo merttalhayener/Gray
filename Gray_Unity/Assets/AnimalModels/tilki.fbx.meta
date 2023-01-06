@@ -6,7 +6,12 @@ ModelImporter:
   - first:
       74: -4707739094163402628
     second: GLTF_created_0|All Animations_GLTF_created_0
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Fennecfox
+    second: {fileID: 2100000, guid: b34ada9d21f108848b6818e980698e60, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -74,8 +79,8 @@ ModelImporter:
     sortHierarchyByName: 1
     importVisibility: 1
     importBlendShapes: 1
-    importCameras: 1
-    importLights: 1
+    importCameras: 0
+    importLights: 0
     nodeNameCollisionStrategy: 1
     fileIdsGeneration: 2
     swapUVChannels: 0
@@ -83,8 +88,8 @@ ModelImporter:
     useFileUnits: 1
     keepQuads: 0
     weldVertices: 1
-    bakeAxisConversion: 0
-    preserveHierarchy: 0
+    bakeAxisConversion: 1
+    preserveHierarchy: 1
     skinWeightsMode: 0
     maxBonesPerVertex: 4
     minBoneWeight: 0.001

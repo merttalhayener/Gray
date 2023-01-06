@@ -6,7 +6,12 @@ ModelImporter:
   - first:
       74: 7527935946438023013
     second: GLTF_created_0|ar_Armature_GLTF_created_0
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_0.001
+    second: {fileID: 2100000, guid: ccb6d0b6f3f68c44bb0e78a1ba516d72, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
