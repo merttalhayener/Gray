@@ -10,7 +10,6 @@ public class EnemyAI : MonoBehaviour
     public Transform playerTransform;
     public float maxTime = 1f;
     public float maxDistance = 1f;
-    float timer = 0f;
     public float eyeRange = 5f;
 
     int waypointIndex;
@@ -18,6 +17,8 @@ public class EnemyAI : MonoBehaviour
     public Transform[] waypoints;
     NavMeshAgent agent;
     public Vector3 target;
+   
+    public LayerMask playerLayer;
 
 
 
@@ -30,19 +31,10 @@ public class EnemyAI : MonoBehaviour
 
     private void Update()
     {
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out RaycastHit hit›nfo, 15f))
-        {
-                Debug.Log("Hit Player");
-                Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit›nfo.distance, Color.red);
-        }
-
-        else
-        {
-            Debug.Log("Hit Nothing");
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit›nfo.distance, Color.green);
-        }
-
+        AgentEmpty();
+        
         animator.SetFloat("Speed", agent.velocity.magnitude);
+       
         if (Vector3.Distance(transform.position, target) < 1)
         {
             
@@ -56,6 +48,16 @@ public class EnemyAI : MonoBehaviour
         target = waypoints[waypointIndex].position;
         agent.SetDestination(target);
     }
+
+   void AgentEmpty() 
+    {
+        if (agent.hasPath == false)
+        {
+            
+            target = waypoints[waypointIndex].position;
+            agent.SetDestination(target);
+        }
+    } 
 
     void IterateWaypointIndex()
     {
@@ -73,9 +75,16 @@ public class EnemyAI : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
+        RaycastHit hit;
+
         if (other.gameObject.tag == "Player")
         {
-            ChasePlayer();
+            if (Physics.Raycast(this.transform.position, transform.TransformDirection(Vector3.forward), out hit, playerLayer))
+            {
+                Debug.DrawRay(this.transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.blue);
+                Debug.Log(hit.collider.name);
+                ChasePlayer();
+            }
         }
     }
 
