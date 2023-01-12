@@ -1008,7 +1008,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 1929573194}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
@@ -1063,7 +1063,7 @@ PrefabInstance:
     - target: {fileID: 8839604358158851366, guid: 5f1eaa6f343505c49b8b0062873ca589,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 1.02
       objectReference: {fileID: 0}
     - target: {fileID: 8839604358158851366, guid: 5f1eaa6f343505c49b8b0062873ca589,
         type: 3}
@@ -1129,7 +1129,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 7, y: 1, z: 20}
+  m_Size: {x: 13, y: 1, z: 20}
   m_Center: {x: 0, y: 1, z: 10}
 --- !u!1001 &7794154433862971925
 PrefabInstance:
