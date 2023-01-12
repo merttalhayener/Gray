@@ -477,8 +477,8 @@ namespace StarterAssets
                     _animator.SetBool("Crouch", false);
                     _controller.height = 1.8f;
                     _controller.center = new Vector3(0, 0.93f, 0);
-                    playerCollider.height = 1.8f;
-                    playerCollider.center = new Vector3(0, 0.93f, 0);
+                    //playerCollider.height = 1.8f;
+                   // playerCollider.center = new Vector3(0, 0.93f, 0);
 
 
                 }
