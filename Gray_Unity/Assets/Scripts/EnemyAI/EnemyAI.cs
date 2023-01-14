@@ -7,19 +7,19 @@ using UnityEngine.AI;
 
 public class EnemyAI : MonoBehaviour
 {
-    public Transform playerTransform;
-    public float maxTime = 1f;
-    public float maxDistance = 1f;
-    public float eyeRange = 5f;
-
-    int waypointIndex;
-    public Animator animator;
-    public Transform[] waypoints;
     NavMeshAgent agent;
-    public Vector3 target;
+    public Animator animator;
    
-    public LayerMask playerLayer;
+    public GameObject player;
 
+    public Transform[] waypoints;
+    public Vector3 target;
+    public Vector3 playerDirection;
+  
+   
+
+    public LayerMask playerLayer;
+    int waypointIndex;
 
 
     private void Start()
@@ -32,11 +32,22 @@ public class EnemyAI : MonoBehaviour
 
     private void Update()
     {
+      
+        //Player'a doðru bir ray oluþturuyoruz.
+        playerDirection =player.transform.position - this.transform.position;
+       
+       
+        // RaycastHit hit;
+        // Physics.Raycast(this.transform.position, playerDirection, out hit, Mathf.Infinity);
+
+        // Debug.DrawRay(this.transform.position, playerDirection * hit.distance, Color.red);
+
+
         AgentEmpty();
-        
+
         animator.SetFloat("Speed", agent.velocity.magnitude);
        
-        if (Vector3.Distance(transform.position, target) < 1)
+        if (Vector3.Distance(transform.position, target) < 2)
         {
             
             IterateWaypointIndex();
@@ -50,6 +61,7 @@ public class EnemyAI : MonoBehaviour
         agent.SetDestination(target);
     }
 
+   
    void AgentEmpty() 
     {
         if (agent.hasPath == false)
@@ -71,21 +83,27 @@ public class EnemyAI : MonoBehaviour
     
     void ChasePlayer()
     {
-        agent.SetDestination(playerTransform.position);
+        agent.SetDestination(player.transform.position);
+       
     }
 
     private void OnTriggerStay(Collider other)
     {
+        //Swat Player'a ray yolluyor.
         RaycastHit hit;
+        Physics.Raycast(this.transform.position, playerDirection, out hit, Mathf.Infinity, playerLayer);
+        Debug.DrawRay(this.transform.position, playerDirection * hit.distance, Color.red);
+
+
+        Debug.Log(hit.collider.tag);
+
 
         if (other.gameObject.tag == "Player")
         {
-            if (Physics.Raycast(this.transform.position, playerTransform.position , out hit, Mathf.Infinity, playerLayer))
-            {
-                Debug.DrawRay(this.transform.position,playerTransform.position * hit.distance, Color.blue);
-                Debug.Log(hit.collider.name);
-                ChasePlayer();
-            }
+           
+              
+              ChasePlayer();
+            
         }
     }
 
@@ -94,7 +112,8 @@ public class EnemyAI : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             target = waypoints[waypointIndex].position;
-            ChasePlayer();
+            Debug.Log("Player görüþ alanýndan çýktý");
+            
         }
     }
 
