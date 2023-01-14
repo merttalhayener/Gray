@@ -9,6 +9,9 @@ TagManager:
   - Ground
   - Bullets
   - Enemy
+  - RaycastHit
+  - PlayerRaycast
+  - Wall
   layers:
   - Default
   - TransparentFX
@@ -23,7 +26,7 @@ TagManager:
   - Platform
   - Bullets
   - Trees
-  - 
+  - Enemy
   - 
   - 
   - 
