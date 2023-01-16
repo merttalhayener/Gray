@@ -47,6 +47,6 @@ public class PlayerManager : MonoBehaviour
 
     public void TakeDamage()
     {
-        playerHealth -= 25;
+        playerHealth -=50;
     }
 }
