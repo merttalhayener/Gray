@@ -2266,7 +2266,7 @@ RectTransform:
   m_Children:
   - {fileID: 1435748106}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3019,7 +3019,7 @@ MonoBehaviour:
   - 'Mission: Talk to village''s hunter in his home'
   - 'Mission: Go to entrance to the forest'
   - 'Mission: Go under the rock'
-  - 'Mission: Press C to crouch'
+  - 'Mission: Press CTRL to crouch'
   - 'Mission: Jump over the log'
   - 'Mission: Press Space to jump'
   - 'Mission: Find hunter''s gun'
@@ -4484,7 +4484,7 @@ MonoBehaviour:
   - 'Mission: Talk to village''s hunter in his home'
   - 'Mission: Go to entrance to the forest'
   - 'Mission: Go under the rock'
-  - 'Mission: Press C to crouch'
+  - 'Mission: Press CTRL to crouch'
   - 'Mission: Jump over the log'
   - 'Mission: Press Space to jump'
   - 'Mission: Find hunter''s gun'
@@ -5311,7 +5311,7 @@ MonoBehaviour:
   - 'Mission: Talk to village''s hunter in his home'
   - 'Mission: Go to entrance to the forest'
   - 'Mission: Go under the rock'
-  - 'Mission: Press C to crouch'
+  - 'Mission: Press CTRL to crouch'
   - 'Mission: Jump over the log'
   - 'Mission: Press Space to jump'
   - 'Mission: Find hunter''s gun'
@@ -13691,7 +13691,7 @@ Transform:
   m_Children:
   - {fileID: 532433436}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &497520617
 GameObject:
@@ -13769,7 +13769,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &498213275
 Rigidbody:
@@ -17918,7 +17918,7 @@ Transform:
   - {fileID: 971778676}
   - {fileID: 281847834}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &650657750
 PrefabInstance:
@@ -18040,7 +18040,7 @@ Transform:
   - {fileID: 1740895618}
   - {fileID: 470527490}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &653325736
 PrefabInstance:
@@ -18052,7 +18052,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: d56da24fcec84f7489650cbf3430a35c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d56da24fcec84f7489650cbf3430a35c,
         type: 3}
@@ -23225,7 +23225,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &834193468 stripped
 GameObject:
@@ -27960,7 +27960,7 @@ Transform:
   m_Children:
   - {fileID: 2013700006}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &977076082
 PrefabInstance:
@@ -32609,7 +32609,7 @@ Transform:
   - {fileID: 144508650}
   - {fileID: 190922685}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1237117968
 PrefabInstance:
@@ -35574,6 +35574,24 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1348046300}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1354527243 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3137623265159437178, guid: 7ea8d30a38882904cb459f96467c4276,
+    type: 3}
+  m_PrefabInstance: {fileID: 1419847791}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1354527245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1354527243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97bb35eb0c9b2634b9c2d61c93da5543, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1356798020
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -37871,6 +37889,110 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1419492336}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1419847791
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2884618849028035222, guid: 7ea8d30a38882904cb459f96467c4276,
+        type: 3}
+      propertyPath: m_Name
+      value: PLAYERSET (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3137623265159437183, guid: 7ea8d30a38882904cb459f96467c4276,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.6700003
+      objectReference: {fileID: 0}
+    - target: {fileID: 3137623265159437183, guid: 7ea8d30a38882904cb459f96467c4276,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.7449999
+      objectReference: {fileID: 0}
+    - target: {fileID: 3137623265159437183, guid: 7ea8d30a38882904cb459f96467c4276,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.6487942
+      objectReference: {fileID: 0}
+    - target: {fileID: 3137623265159437183, guid: 7ea8d30a38882904cb459f96467c4276,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5410756950184088271, guid: 7ea8d30a38882904cb459f96467c4276,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.6700003
+      objectReference: {fileID: 0}
+    - target: {fileID: 5410756950184088271, guid: 7ea8d30a38882904cb459f96467c4276,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.7449999
+      objectReference: {fileID: 0}
+    - target: {fileID: 5410756950184088271, guid: 7ea8d30a38882904cb459f96467c4276,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.6487942
+      objectReference: {fileID: 0}
+    - target: {fileID: 7192134193954342630, guid: 7ea8d30a38882904cb459f96467c4276,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7192134193954342630, guid: 7ea8d30a38882904cb459f96467c4276,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 662.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7192134193954342630, guid: 7ea8d30a38882904cb459f96467c4276,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7.6753273
+      objectReference: {fileID: 0}
+    - target: {fileID: 7192134193954342630, guid: 7ea8d30a38882904cb459f96467c4276,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 798.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 7192134193954342630, guid: 7ea8d30a38882904cb459f96467c4276,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7573617
+      objectReference: {fileID: 0}
+    - target: {fileID: 7192134193954342630, guid: 7ea8d30a38882904cb459f96467c4276,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7192134193954342630, guid: 7ea8d30a38882904cb459f96467c4276,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.65299565
+      objectReference: {fileID: 0}
+    - target: {fileID: 7192134193954342630, guid: 7ea8d30a38882904cb459f96467c4276,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7192134193954342630, guid: 7ea8d30a38882904cb459f96467c4276,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7192134193954342630, guid: 7ea8d30a38882904cb459f96467c4276,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -81.536
+      objectReference: {fileID: 0}
+    - target: {fileID: 7192134193954342630, guid: 7ea8d30a38882904cb459f96467c4276,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7ea8d30a38882904cb459f96467c4276, type: 3}
 --- !u!1001 &1420995444
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40687,7 +40809,7 @@ RectTransform:
   m_Children:
   - {fileID: 795994399}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -42450,7 +42572,7 @@ PrefabInstance:
     - target: {fileID: 1030678204987211682, guid: 398b156fac7c6f44db09e9ad046c24dd,
         type: 3}
       propertyPath: m_RootOrder
-      value: 16
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 1030678204987211682, guid: 398b156fac7c6f44db09e9ad046c24dd,
         type: 3}
@@ -45007,7 +45129,7 @@ Transform:
   - {fileID: 645283723}
   - {fileID: 870636412}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1672614216
 PrefabInstance:
@@ -47639,7 +47761,7 @@ MonoBehaviour:
   - 'Mission: Talk to village''s hunter in his home'
   - 'Mission: Go to entrance to the forest'
   - 'Mission: Go under the rock'
-  - 'Mission: Press C to crouch'
+  - 'Mission: Press CTRL to crouch'
   - 'Mission: Jump over the log'
   - 'Mission: Press Space to jump'
   - 'Mission: Find hunter''s gun'
@@ -48385,7 +48507,7 @@ MonoBehaviour:
   - 'Mission: Talk to village''s hunter in his home'
   - 'Mission: Go to entrance to the forest'
   - 'Mission: Go under the rock'
-  - 'Mission: Press C to crouch'
+  - 'Mission: Press CTRL to crouch'
   - 'Mission: Jump over the log'
   - 'Mission: Press Space to jump'
   - 'Mission: Find hunter''s gun'
@@ -48909,7 +49031,7 @@ Transform:
   - {fileID: 549163574}
   - {fileID: 457680992}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1809205600
 PrefabInstance:
@@ -57761,7 +57883,7 @@ MonoBehaviour:
   - 'Mission: Talk to village''s hunter in his home'
   - 'Mission: Go to entrance to the forest'
   - 'Mission: Go under the rock'
-  - 'Mission: Press C to crouch'
+  - 'Mission: Press CTRL to crouch'
   - 'Mission: Jump over the log'
   - 'Mission: Press Space to jump'
   - 'Mission: Find hunter''s gun'
@@ -57885,7 +58007,7 @@ Transform:
   - {fileID: 4440281143411564752}
   - {fileID: 5465940246139050781}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!4 &543450651988366564 stripped
 Transform:
@@ -59015,7 +59137,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1530784636066508338
 Transform:
   m_ObjectHideFlags: 0
@@ -59653,7 +59775,7 @@ MonoBehaviour:
   - 'Mission: Talk to village''s hunter in his home'
   - 'Mission: Go to entrance to the forest'
   - 'Mission: Go under the rock'
-  - 'Mission: Press C to crouch'
+  - 'Mission: Press CTRL to crouch'
   - 'Mission: Jump over the log'
   - 'Mission: Press Space to jump'
   - 'Mission: Find hunter''s gun'
@@ -60252,7 +60374,7 @@ MonoBehaviour:
   - 'Mission: Talk to village''s hunter in his home'
   - 'Mission: Go to entrance to the forest'
   - 'Mission: Go under the rock'
-  - 'Mission: Press C to crouch'
+  - 'Mission: Press CTRL to crouch'
   - 'Mission: Jump over the log'
   - 'Mission: Press Space to jump'
   - 'Mission: Find hunter''s gun'
@@ -61169,7 +61291,7 @@ RectTransform:
   m_Children:
   - {fileID: 4539999974481503758}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -61420,7 +61542,7 @@ MonoBehaviour:
   - 'Mission: Talk to village''s hunter in his home'
   - 'Mission: Go to entrance to the forest'
   - 'Mission: Go under the rock'
-  - 'Mission: Press C to crouch'
+  - 'Mission: Press CTRL to crouch'
   - 'Mission: Jump over the log'
   - 'Mission: Press Space to jump'
   - 'Mission: Find hunter''s gun'
@@ -61551,7 +61673,7 @@ MonoBehaviour:
   - 'Mission: Talk to village''s hunter in his home'
   - 'Mission: Go to entrance to the forest'
   - 'Mission: Go under the rock'
-  - 'Mission: Press C to crouch'
+  - 'Mission: Press CTRL to crouch'
   - 'Mission: Jump over the log'
   - 'Mission: Press Space to jump'
   - 'Mission: Find hunter''s gun'
@@ -62490,7 +62612,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1407910165562559309}
   m_LocalRotation: {x: -0, y: 0.725713, z: -0, w: -0.68799764}
-  m_LocalPosition: {x: 661.448, y: 7.678, z: 799.712}
+  m_LocalPosition: {x: 655.73, y: 7.678, z: 792.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -62556,6 +62678,7 @@ MonoBehaviour:
   canSlide: 0
   slideRequiredSpeed: 2.5
   HeadPosition: {fileID: 7794154435368555676}
+  Crouch: 0
   speedWhileCrouching: 1.5
   _cinemachineTargetYaw: 0
   _cinemachineTargetPitch: 0
@@ -63041,7 +63164,7 @@ MonoBehaviour:
   - 'Mission: Talk to village''s hunter in his home'
   - 'Mission: Go to entrance to the forest'
   - 'Mission: Go under the rock'
-  - 'Mission: Press C to crouch'
+  - 'Mission: Press CTRL to crouch'
   - 'Mission: Jump over the log'
   - 'Mission: Press Space to jump'
   - 'Mission: Find hunter''s gun'
@@ -63641,6 +63764,7 @@ MonoBehaviour:
     type: 3}
   spawnBulletPosition: {fileID: 7594407809298575444}
   gunFire: {fileID: 8300000, guid: b38030517f157074a9312c5ee78b2833, type: 3}
+  playerGunShot: {fileID: 0}
 --- !u!114 &7594407809085594364
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65481,7 +65605,7 @@ Transform:
   m_Children:
   - {fileID: 921090568641138419}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 16.813, y: 78.977, z: -108.406}
 --- !u!1 &8571621204700729294
 GameObject:
