@@ -29,7 +29,7 @@ public class EnemyTakedDown : MonoBehaviour
             agent.enabled = false;
             this.gameObject.GetComponent<CapsuleCollider>().enabled = false;
         }
-        isHeAlive();
+      //  isHeAlive();
         //Debug.Log(health);
     }
 
@@ -43,7 +43,7 @@ public class EnemyTakedDown : MonoBehaviour
 
     }
 
-    private void isHeAlive()
+    /*private void isHeAlive()
     {
         if (health < 100)
         {
@@ -66,7 +66,7 @@ public class EnemyTakedDown : MonoBehaviour
         }
        
     }
-   
+   */
 
 
 }

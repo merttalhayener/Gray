@@ -1,3 +1,4 @@
+using StarterAssets;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
@@ -10,10 +11,14 @@ public class EnemyAI : MonoBehaviour
 {
     NavMeshAgent agent;
     public Animator animator;
+    
 
+    public GameObject playerRaycast;
     public GameObject player;
     public GameObject startRayPosition;
     public GameObject swatHead;
+  
+    public SimpleShoot enemyGunShot;
 
     public Transform[] waypoints;
     public Vector3 target;
@@ -23,7 +28,21 @@ public class EnemyAI : MonoBehaviour
     int waypointIndex;
 
     public bool alerted;
+    public bool sawPlayer;
+    public float attackRange;
+    public bool playerInAttackRange;
+    public LayerMask whatIsPlayer;
 
+    public ThirdPersonController playerController;
+    public PlayerManager playerManager;
+    
+
+    public bool inAttackMode;
+    public bool shoot;
+    
+    
+    
+ 
 
 
 
@@ -31,28 +50,46 @@ public class EnemyAI : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
+        playerController = GetComponent<ThirdPersonController>();
         UpdateDestination();
-        alerted = false;
-        
-        
     }
+
+
 
     private void Update()
     {
+        animator.SetBool("InAttackMode", inAttackMode);
+        animator.SetBool("Alerted", alerted);
+        animator.SetBool("SawPlayer", sawPlayer);
+        animator.SetBool("PlayerUsingWeapon", playerManager.playerUsingWeapon);
+        
+
+        animator.SetFloat("Speed", agent.velocity.magnitude);
+
+        StopController();
         AgentEmpty();
-        IsAlerted();
+        isAllerted();
+        AttackMode();
+        Shoot();
+
+        Debug.Log(agent.isStopped);
+
+        
+       
+
+
+        playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
       
        
         //Player ve swat arasýndaki yönün belirlenmesi.
-        playerDirection = player.transform.position - this.transform.position;
-       
-       
+        playerDirection = playerRaycast.transform.position - this.transform.position;
 
-        animator.SetFloat("Speed", agent.velocity.magnitude);
+
+        Debug.DrawRay(startRayPosition.transform.position, playerDirection *10f, Color.red);
+
        
         if (Vector3.Distance(transform.position, target) < 2f)
         {
-            
             IterateWaypointIndex();
             UpdateDestination();
         }
@@ -69,14 +106,16 @@ public class EnemyAI : MonoBehaviour
     {
         if (agent.hasPath == false)
         {
+            
             target = waypoints[waypointIndex].position;
             agent.SetDestination(target);
         }
     } 
 
+
     void IterateWaypointIndex()
     {
-        agent.stoppingDistance = 0f;
+        
         waypointIndex++;
         if (waypointIndex == waypoints.Length)
         {
@@ -86,29 +125,86 @@ public class EnemyAI : MonoBehaviour
     
     void ChasePlayer()
     {
-        alerted = true;
+        agent.stoppingDistance = attackRange;
         swatHead.transform.Rotate(playerDirection);
-        target = player.transform.position;
+        target = playerRaycast.transform.position;
         // agent.SetDestination(player.transform.position);
         agent.SetDestination(target);
+        
     }
-
-    void IsAlerted()
+    
+    void AttackMode()
     {
-        if (alerted == true)
+        if(alerted==true && playerInAttackRange ==true && sawPlayer == true )
         {
-            Debug.Log("Alerted");
+            
+            inAttackMode = true;
+        }
+        else
+        {
+            
+            inAttackMode = false;
+           
         }
     }
+
+    void Shoot()
+    {
+        if (inAttackMode == true )
+        {
+            agent.stoppingDistance = attackRange;
+            agent.transform.LookAt(player.transform);
+            agent.isStopped = true;
+            animator.SetTrigger("Shoot!");
+           
+        }
+    }
+
+    void PullTheTrigger()
+    {
+        enemyGunShot.Shoot();
+        enemyGunShot.CasingRelease();
+    }
+
+    void StopController()
+    {
+        if(agent.isStopped && animator.GetCurrentAnimatorStateInfo(0).IsName("Shooting"))
+        {
+            agent.isStopped = false;
+        }
+        else if(animator.GetCurrentAnimatorStateInfo(0).IsName("Shooting"))
+        {
+            agent.isStopped = true;
+        }
+    }
+
+    void isAllerted()
+    {
+        if (sawPlayer == false && alerted)
+        {
+            agent.stoppingDistance = 4f;
+            agent.isStopped = false;
+            StartCoroutine(WaitForUnAlert());
+        }
+
+        if (alerted == true)
+        {
+            agent.speed = 2f;
+        }
+
+        if (alerted == false)
+        {
+            agent.stoppingDistance = 1f;
+            agent.speed = 2f;
+        }
+    }
+   
 
     private void OnTriggerStay(Collider other)
     {
         //Swat Player'a ray yolluyor.
         RaycastHit hit;
         Physics.Raycast(startRayPosition.transform.position, playerDirection, out hit, Mathf.Infinity, playerLayer);
-        Debug.DrawRay(startRayPosition.transform.position, playerDirection * hit.distance, Color.red);
-
-
         Debug.Log(hit.collider.tag);
 
 
@@ -116,21 +212,36 @@ public class EnemyAI : MonoBehaviour
         {
            if(hit.collider.tag == "Player")
             {
-              Debug.Log("Player görüþ menzilinde");
-                Debug.DrawRay(this.transform.position, playerDirection * hit.distance, Color.blue);
+                sawPlayer = true;
+                alerted = true;
+                Debug.DrawRay(startRayPosition.transform.position, playerDirection * 25f, Color.green);
                 ChasePlayer();
-                
+            }
+        }
+
+       else
+        {
+            if(hit.collider.tag!= "Player")
+            {
+                sawPlayer = false;
             }
         }
     }
-    
 
-    private void OnTriggerExit(Collider other)
+
+    IEnumerator WaitForUnAlert()
     {
-        if(other.gameObject.tag == "Player" )
-        {
-            alerted = false;
-            Debug.Log("Get back to patroling");
-        }
+        yield return new WaitForSeconds(10f);
+        //10 saniye geçti.
+        alerted = false;
+    }
+
+
+    IEnumerator WaitForNextShot()
+    {
+        shoot = false;
+        yield return new WaitForSeconds(5f);
+        
+        //1saniye geçti.
     }
 }

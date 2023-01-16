@@ -27,6 +27,8 @@ public class ThirdPersonAimController : MonoBehaviour
     private StarterAssetsInputs starterAssestInputs;
     private Animator animator;
 
+    public SimpleShoot playerGunShot;
+
     private void Awake()
     {
         thirdPersonController = GetComponent<ThirdPersonController>();
@@ -36,7 +38,7 @@ public class ThirdPersonAimController : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
 
     }
-   
+
     private void Update()
     {
         //Aim codes
@@ -45,57 +47,26 @@ public class ThirdPersonAimController : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
         Transform hitTransform = null;
-        if(Physics.Raycast(ray,out RaycastHit raycastHit, 999f, aimColliderMask))
+        
+        if (Physics.Raycast(ray, out RaycastHit raycastHit, 999f, aimColliderMask))
         {
             debugTransform.position = raycastHit.point;
             mouseWorldPosition = raycastHit.point;
             hitTransform = raycastHit.transform;
         }
-        
+
         if (starterAssestInputs.aim)
         {
-            Debug.Log("Sað Týk Basýldý");
             aimVirtualCamera.gameObject.SetActive(true);
             thirdPersonController.SetSensitivity(aimSensitivity);
             thirdPersonController.SetRotateOnMove(false);
-            animator.SetLayerWeight(1, Mathf.Lerp(animator.GetLayerWeight(1),1f,Time.deltaTime * 10f));
+            animator.SetLayerWeight(1, Mathf.Lerp(animator.GetLayerWeight(1), 1f, Time.deltaTime * 10f));
 
             Vector3 worldAimTarget = mouseWorldPosition;
             worldAimTarget.y = transform.position.y;
             Vector3 aimDirection = (worldAimTarget - transform.position).normalized;
 
             transform.forward = Vector3.Lerp(transform.forward, aimDirection, Time.deltaTime * 20f);
-            if (starterAssestInputs.shoot)
-            {
-                if (!audioSource.isPlaying)
-                {
-                    audioSource.PlayOneShot(gunFire);
-                }
-                if (hitTransform != null)
-                {
-
-                    //hit something
-                    if (hitTransform.GetComponent<EnemyTakedDown>() != null)
-                    {
-                        Debug.Log("Hedef vuruldu");
-                        hitTransform.gameObject.GetComponent<EnemyTakedDown>().health -= 100f;
-
-
-
-                        //Hit target
-                    }
-                    else
-                    {
-                        Debug.Log("Baþka birþey vuruldu");
-                        //Hit something else 
-                    }
-
-                }
-                // Vector3 aimDirection = (mouseWorldPosition - spawnBulletPosition.position).normalized;
-                // Instantiate(pfBulletProjectile, spawnBulletPosition.position, Quaternion.LookRotation(aimDirection, Vector3.up));
-                starterAssestInputs.shoot = false;
-            }
-
         }
         else
         {
@@ -105,8 +76,47 @@ public class ThirdPersonAimController : MonoBehaviour
             animator.SetLayerWeight(1, Mathf.Lerp(animator.GetLayerWeight(1), 0f, Time.deltaTime * 10f));
         }
 
-    }
-        
+        if (starterAssestInputs.shoot)
+        {
+            if (!audioSource.isPlaying)
+            {
+                audioSource.PlayOneShot(gunFire);
+                PullTheTrigger();
+            }
+            
+            /*
+            if (hitTransform != null)
+            {
 
+                //hit something
+                if (hitTransform.GetComponent<EnemyManager>() != null)
+                {
+                    Debug.Log("Hedef vuruldu");
+                    hitTransform.gameObject.GetComponent<EnemyManager>().TakeDamage();
+
+
+
+                    //Hit target
+                }
+                else
+                {
+                    Debug.Log("Baþka birþey vuruldu");
+                    //Hit something else 
+                }
+
+            }
+            */
+            // Vector3 aimDirection = (mouseWorldPosition - spawnBulletPosition.position).normalized;
+            // Instantiate(pfBulletProjectile, spawnBulletPosition.position, Quaternion.LookRotation(aimDirection, Vector3.up));
+            starterAssestInputs.shoot = false;
+        }
+
+    }
+
+    void PullTheTrigger()
+    {
+        playerGunShot.Shoot();
+        playerGunShot.CasingRelease();
+    }
 
 }
