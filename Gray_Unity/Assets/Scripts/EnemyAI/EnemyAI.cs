@@ -67,9 +67,12 @@ public class EnemyAI : MonoBehaviour
         isAllerted();
         AttackMode();
         Shoot();
-        animator.SetTrigger("Shoot!");
+        
 
-        Debug.Log(agent.isStopped);
+        
+
+
+
 
         
        
@@ -202,7 +205,7 @@ public class EnemyAI : MonoBehaviour
         //Swat Player'a ray yolluyor.
         RaycastHit hit;
         Physics.Raycast(startRayPosition.transform.position, playerDirection, out hit, Mathf.Infinity, visibleLayer);
-        Debug.Log(hit.collider.tag);
+        
 
 
         if (other.gameObject.tag == "Player")
