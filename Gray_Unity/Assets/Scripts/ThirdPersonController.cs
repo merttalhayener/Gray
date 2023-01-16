@@ -92,7 +92,7 @@ namespace StarterAssets
 
         //player crouching
         public GameObject HeadPosition;
-        private bool Crouch = false;
+        public bool Crouch = false;
         private bool canStand;
         [SerializeField] private float speedWhileCrouching=1.5f;
         
@@ -475,6 +475,7 @@ namespace StarterAssets
                 {
                     Crouch = false;
                     _animator.SetBool("Crouch", false);
+
                     _controller.height = 1.8f;
                     _controller.center = new Vector3(0, 0.93f, 0);
                     //playerCollider.height = 1.8f;
@@ -487,7 +488,7 @@ namespace StarterAssets
                 {
                     Crouch = true;
                     _animator.SetBool("Crouch", true);
-                    _controller.height = 1.2f;
+                    _controller.height = 1.4f;
                     _controller.center = new Vector3(0, 0.60f, 0.15f);
          
 
