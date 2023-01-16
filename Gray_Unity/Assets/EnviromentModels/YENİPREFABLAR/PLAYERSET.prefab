@@ -3848,8 +3848,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17ea72b0dda19c94b88a990c7d005103, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHealth: 0
+  playerHealth: 100
   playerIsAlive: 0
+  playerAnimator: {fileID: 4505016346511183744}
+  tpController: {fileID: 7146917972788711243}
 --- !u!1 &7149185472054153179
 GameObject:
   m_ObjectHideFlags: 0
