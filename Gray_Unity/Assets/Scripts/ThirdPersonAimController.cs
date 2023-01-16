@@ -116,7 +116,6 @@ public class ThirdPersonAimController : MonoBehaviour
     void PullTheTrigger()
     {
         playerGunShot.Shoot();
-        playerGunShot.CasingRelease();
     }
 
 }

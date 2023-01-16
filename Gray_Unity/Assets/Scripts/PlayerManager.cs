@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
-    public GameObject gun;
-    public bool playerUsingWeapon;
+    
+   
     public float playerHealth=100f;
     public bool playerIsAlive;
    
     void Update()
     {
         Debug.Log(playerHealth);
-        isUsingWeapon();
         PlayerHealthManager();
     }
     private void Awake()
@@ -20,20 +19,6 @@ public class PlayerManager : MonoBehaviour
         playerIsAlive = true;
         playerHealth = 10000f;
     }
-
-
-    void isUsingWeapon()
-    {
-        if (gun.gameObject != null)
-        {
-            playerUsingWeapon = true;
-        }
-
-        if (gun.gameObject == null)
-        {
-            playerUsingWeapon = false;
-        }
-    }  
 
     void PlayerHealthManager()
     {

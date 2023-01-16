@@ -27,20 +27,11 @@ public class BulletProjectile : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Enemy")
-        {
-            enemy = other.gameObject;
-            enemyManager = GetComponent<EnemyManager>();
-            enemyManager.TakeDamage();
-            Debug.Log("Bulundu enemy");
-            
-        }
-        if (other.GetComponent<BulletTarget>() != null)
+       
+        if (other.GetComponent<BulletTarget>() != null )
         {
             playerManager.TakeDamage();
             Destroy(this.gameObject);
         }
-
-
     }
 }
