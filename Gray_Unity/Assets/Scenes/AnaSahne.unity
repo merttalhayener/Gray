@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 66120552}
   - component: {fileID: 66120551}
   - component: {fileID: 66120549}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -285,7 +285,7 @@ GameObject:
   - component: {fileID: 416154608}
   - component: {fileID: 416154607}
   - component: {fileID: 416154605}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -339,7 +339,7 @@ GameObject:
   - component: {fileID: 556462705}
   - component: {fileID: 556462704}
   - component: {fileID: 556462702}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -781,7 +781,7 @@ GameObject:
   - component: {fileID: 1402820640}
   - component: {fileID: 1402820639}
   - component: {fileID: 1402820637}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Cube (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -896,7 +896,7 @@ GameObject:
   - component: {fileID: 1912958172}
   - component: {fileID: 1912958171}
   - component: {fileID: 1912958169}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Cube (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -948,7 +948,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2025159034}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: WorldCollider(Silmeyin)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1023,7 +1023,7 @@ PrefabInstance:
     - target: {fileID: 7192134193954342630, guid: 7ea8d30a38882904cb459f96467c4276,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.7
+      value: -13.83
       objectReference: {fileID: 0}
     - target: {fileID: 7192134193954342630, guid: 7ea8d30a38882904cb459f96467c4276,
         type: 3}

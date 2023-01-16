@@ -41,6 +41,7 @@ public class ThirdPersonAimController : MonoBehaviour
 
     private void Update()
     {
+       
         //Aim codes
         Vector3 mouseWorldPosition = Vector3.zero;
         Vector2 screenCenterPoint = new Vector2(Screen.width / 2f, Screen.height / 2f);//Ekranýn ortasýný alýyoruz
@@ -75,6 +76,7 @@ public class ThirdPersonAimController : MonoBehaviour
             thirdPersonController.SetRotateOnMove(true);
             animator.SetLayerWeight(1, Mathf.Lerp(animator.GetLayerWeight(1), 0f, Time.deltaTime * 10f));
         }
+        Debug.Log(hitTransform);
 
         if (starterAssestInputs.shoot)
         {
@@ -82,7 +84,7 @@ public class ThirdPersonAimController : MonoBehaviour
             Instantiate(pfBulletProjectile, spawnBulletPosition.position, Quaternion.LookRotation(aimDirection, Vector3.up));
             starterAssestInputs.shoot = false;
 
-            /*
+            
            
             if (!audioSource.isPlaying)
             {
@@ -108,7 +110,7 @@ public class ThirdPersonAimController : MonoBehaviour
                 }
 
             }
-          */
+         
         }
 
     }
