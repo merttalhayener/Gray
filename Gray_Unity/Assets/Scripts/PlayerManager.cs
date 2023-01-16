@@ -2,6 +2,7 @@ using StarterAssets;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -35,6 +36,7 @@ public class PlayerManager : MonoBehaviour
             playerIsAlive = false;
             tpController.enabled = false;
             playerAnimator.SetBool("PlayerIsAlive", playerIsAlive);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             
         }
 
