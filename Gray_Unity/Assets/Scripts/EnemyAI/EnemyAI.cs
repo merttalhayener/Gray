@@ -24,7 +24,7 @@ public class EnemyAI : MonoBehaviour
     public Vector3 target;
     public Vector3 playerDirection;
   
-    public LayerMask playerLayer;
+    public LayerMask visibleLayer;
     int waypointIndex;
 
     public bool alerted;
@@ -33,12 +33,12 @@ public class EnemyAI : MonoBehaviour
     public bool playerInAttackRange;
     public LayerMask whatIsPlayer;
 
-    public ThirdPersonController playerController;
+    
     public PlayerManager playerManager;
     
 
     public bool inAttackMode;
-    public bool shoot;
+    
     
     
     
@@ -50,7 +50,6 @@ public class EnemyAI : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
-        playerController = GetComponent<ThirdPersonController>();
         UpdateDestination();
     }
 
@@ -61,9 +60,6 @@ public class EnemyAI : MonoBehaviour
         animator.SetBool("InAttackMode", inAttackMode);
         animator.SetBool("Alerted", alerted);
         animator.SetBool("SawPlayer", sawPlayer);
-        animator.SetBool("PlayerUsingWeapon", playerManager.playerUsingWeapon);
-        
-
         animator.SetFloat("Speed", agent.velocity.magnitude);
 
         StopController();
@@ -71,8 +67,12 @@ public class EnemyAI : MonoBehaviour
         isAllerted();
         AttackMode();
         Shoot();
+        
 
-        Debug.Log(agent.isStopped);
+        
+
+
+
 
         
        
@@ -204,8 +204,8 @@ public class EnemyAI : MonoBehaviour
     {
         //Swat Player'a ray yolluyor.
         RaycastHit hit;
-        Physics.Raycast(startRayPosition.transform.position, playerDirection, out hit, Mathf.Infinity, playerLayer);
-        Debug.Log(hit.collider.tag);
+        Physics.Raycast(startRayPosition.transform.position, playerDirection, out hit, Mathf.Infinity, visibleLayer);
+        
 
 
         if (other.gameObject.tag == "Player")
@@ -234,14 +234,5 @@ public class EnemyAI : MonoBehaviour
         yield return new WaitForSeconds(10f);
         //10 saniye geçti.
         alerted = false;
-    }
-
-
-    IEnumerator WaitForNextShot()
-    {
-        shoot = false;
-        yield return new WaitForSeconds(5f);
-        
-        //1saniye geçti.
     }
 }

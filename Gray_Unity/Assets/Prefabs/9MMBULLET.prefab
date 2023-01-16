@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 7341735075989022678}
   - component: {fileID: 7341735075989022679}
   - component: {fileID: 7341735075989022672}
-  - component: {fileID: 4177792982485020865}
+  - component: {fileID: 6658142648961129238}
   m_Layer: 11
-  m_Name: BulletProjectile
+  m_Name: 9MMBULLET
   m_TagString: Bullets
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,8 +28,8 @@ Transform:
   m_GameObject: {fileID: 7341735075989022673}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 3.93, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 7341735076137422514}
   m_Father: {fileID: 0}
@@ -64,7 +64,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.1, y: 0.1, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4177792982485020865
+--- !u!114 &6658142648961129238
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -73,7 +73,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7341735075989022673}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15d8a5410a87bff4dae9447c671e6619, type: 3}
+  m_Script: {fileID: 11500000, guid: 779c418f5a6de8e40a9d84b7b1af44a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &7341735076137422515

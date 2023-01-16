@@ -1,39 +1,31 @@
+using StarterAssets;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
-    public GameObject gun;
-    public bool playerUsingWeapon;
+    
+   
     public float playerHealth=100f;
     public bool playerIsAlive;
+    public Animator playerAnimator;
+    public ThirdPersonController tpController;
+    
    
     void Update()
     {
         Debug.Log(playerHealth);
-        isUsingWeapon();
         PlayerHealthManager();
+       
     }
     private void Awake()
     {
         playerIsAlive = true;
-        playerHealth = 10000f;
+        playerHealth = 100f;
+        playerAnimator.SetBool("PlayerIsAlive", playerIsAlive);
+
     }
-
-
-    void isUsingWeapon()
-    {
-        if (gun.gameObject != null)
-        {
-            playerUsingWeapon = true;
-        }
-
-        if (gun.gameObject == null)
-        {
-            playerUsingWeapon = false;
-        }
-    }  
 
     void PlayerHealthManager()
     {
@@ -41,11 +33,15 @@ public class PlayerManager : MonoBehaviour
         {
             playerHealth = 0;
             playerIsAlive = false;
+            tpController.enabled = false;
+            playerAnimator.SetBool("PlayerIsAlive", playerIsAlive);
+            
         }
 
         if(playerHealth > 0)
         {
             playerIsAlive = true;
+            playerAnimator.SetBool("PlayerIsAlive", playerIsAlive);
         }
     }
 

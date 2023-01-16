@@ -8,19 +8,19 @@ public class EnemyManager : MonoBehaviour
     public bool enemyIsAlive = true;
 
     public Animator enemyAnimator;
+    private EnemyAI enemyAI;
     
 
-    private void Start()
+    private void Awake()
     {
-       
         enemyIsAlive = true;
+        enemyAI = GetComponent<EnemyAI>();
        
-
-        
     }
 
     void Update()
     {
+
         enemyAnimator.SetBool("isEnemyAlive", enemyIsAlive);
         EnemyHealthManager();
     }
@@ -29,6 +29,7 @@ public class EnemyManager : MonoBehaviour
     {
         if (enemyHealth <= 0)
         {
+            enemyAI.enabled = false;
             enemyHealth = 0;
             enemyIsAlive = false;
         }

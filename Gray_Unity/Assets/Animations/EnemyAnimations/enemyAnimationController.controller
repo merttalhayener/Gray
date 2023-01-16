@@ -156,7 +156,7 @@ AnimatorStateMachine:
     m_Position: {x: -994.8447, y: -854.2422, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 9183418516620581673}
-    m_Position: {x: 420, y: -550, z: 0}
+    m_Position: {x: 400, y: -550, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -2820226013958541185}
     m_Position: {x: 250, y: -430, z: 0}
@@ -165,14 +165,14 @@ AnimatorStateMachine:
     m_Position: {x: 50, y: -550, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -7665983350949914284}
-    m_Position: {x: 730, y: -530, z: 0}
+    m_Position: {x: 750, y: -560, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions:
   - {fileID: -8375402336522776070}
   m_EntryTransitions: []
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
-  m_AnyStatePosition: {x: 750, y: -410, z: 0}
+  m_AnyStatePosition: {x: 780, y: -440, z: 0}
   m_EntryPosition: {x: 50, y: -280, z: 0}
   m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
@@ -275,55 +275,49 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
-  - m_Name: isHeAlive
-    m_Type: 4
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Speed
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Alerted
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: SawPlayer
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: PlayerUsingWeapon
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Shoot!
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: InAttackMode
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: isEnemyAlive
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer

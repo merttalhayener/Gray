@@ -78,13 +78,19 @@ public class ThirdPersonAimController : MonoBehaviour
 
         if (starterAssestInputs.shoot)
         {
+            Vector3 aimDirection = (mouseWorldPosition - spawnBulletPosition.position).normalized;
+            Instantiate(pfBulletProjectile, spawnBulletPosition.position, Quaternion.LookRotation(aimDirection, Vector3.up));
+            starterAssestInputs.shoot = false;
+
+            /*
+           
             if (!audioSource.isPlaying)
             {
                 audioSource.PlayOneShot(gunFire);
                 PullTheTrigger();
             }
             
-            /*
+           
             if (hitTransform != null)
             {
 
@@ -93,9 +99,6 @@ public class ThirdPersonAimController : MonoBehaviour
                 {
                     Debug.Log("Hedef vuruldu");
                     hitTransform.gameObject.GetComponent<EnemyManager>().TakeDamage();
-
-
-
                     //Hit target
                 }
                 else
@@ -105,10 +108,7 @@ public class ThirdPersonAimController : MonoBehaviour
                 }
 
             }
-            */
-            // Vector3 aimDirection = (mouseWorldPosition - spawnBulletPosition.position).normalized;
-            // Instantiate(pfBulletProjectile, spawnBulletPosition.position, Quaternion.LookRotation(aimDirection, Vector3.up));
-            starterAssestInputs.shoot = false;
+          */
         }
 
     }
@@ -116,7 +116,6 @@ public class ThirdPersonAimController : MonoBehaviour
     void PullTheTrigger()
     {
         playerGunShot.Shoot();
-        playerGunShot.CasingRelease();
     }
 
 }
