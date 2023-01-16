@@ -156,7 +156,7 @@ AnimatorStateMachine:
     m_Position: {x: -994.8447, y: -854.2422, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 9183418516620581673}
-    m_Position: {x: 420, y: -550, z: 0}
+    m_Position: {x: 400, y: -550, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -2820226013958541185}
     m_Position: {x: 250, y: -430, z: 0}
@@ -165,7 +165,7 @@ AnimatorStateMachine:
     m_Position: {x: 50, y: -550, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -7665983350949914284}
-    m_Position: {x: 730, y: -530, z: 0}
+    m_Position: {x: 730, y: -520, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions:
   - {fileID: -8375402336522776070}
@@ -272,12 +272,6 @@ AnimatorController:
   m_AnimatorParameters:
   - m_Name: TakedDown
     m_Type: 9
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 0}
-  - m_Name: isHeAlive
-    m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0

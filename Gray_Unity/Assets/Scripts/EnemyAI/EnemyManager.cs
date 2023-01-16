@@ -10,13 +10,10 @@ public class EnemyManager : MonoBehaviour
     public Animator enemyAnimator;
     
 
-    private void Start()
+    private void Awake()
     {
-       
         enemyIsAlive = true;
        
-
-        
     }
 
     void Update()

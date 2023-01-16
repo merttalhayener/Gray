@@ -28,19 +28,19 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  -
+  - 
   - Water
   - UI
-  - Interactable
-  - Pushable
-  - Ground
   - Player
-  - Platform
-  - Bullets
-  - Trees
-  - Enemy
-  - Raycast
-  - WorldCollider
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 

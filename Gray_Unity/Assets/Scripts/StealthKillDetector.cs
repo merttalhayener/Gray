@@ -25,7 +25,8 @@ public class StealthKillDetector : MonoBehaviour
         enemy.GetComponent<EnemyTakedDown>();
         enemyTakedDown = enemy.GetComponent<EnemyTakedDown>();
         enemyAlive = enemyTakedDown.isAlive;
-        
+        _animator.SetBool("isEnemyAlive", enemyAlive);
+
     }
 
     private void OnTriggerStay(Collider other)
